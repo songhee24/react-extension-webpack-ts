@@ -4,7 +4,9 @@ const HtmlWebPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/test.tsx",
+  entry: {
+    popup: path.resolve(__dirname, "src/popup/popup/tsx"),
+  },
   module: {
     rules: [
       {
@@ -33,7 +35,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "index.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
 };
