@@ -1,0 +1,6 @@
+{
+  "manifest_version": 3,
+  "name": "React Extension",
+  "description": "Chrome Extension in React!",
+  "version": "1.0.0"
+}
