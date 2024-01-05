@@ -5,7 +5,7 @@ const HtmlWebPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    popup: path.resolve(__dirname, "src/popup/popup/tsx"),
+    popup: path.resolve(__dirname, "src/popup/popup.tsx"),
   },
   module: {
     rules: [
