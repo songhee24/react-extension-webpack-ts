@@ -1,5 +1,6 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -21,6 +22,11 @@ module.exports = {
           to: path.resolve("dist"),
         },
       ],
+    }),
+    new HtmlWebPlugin({
+      title: "React Extension",
+      filename: "popup.html",
+      chunks: ["popup"],
     }),
   ],
   resolve: {
