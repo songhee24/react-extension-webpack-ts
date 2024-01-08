@@ -18,6 +18,7 @@ module.exports = {
   devtool: "cheap-module-source-map",
   entry: {
     popup: path.resolve(__dirname, "src/popup/popup.tsx"),
+    options: path.resolve(__dirname, "src/options/options.tsx"),
   },
   module: {
     rules: [
