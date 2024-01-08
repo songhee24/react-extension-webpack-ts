@@ -1,0 +1,1 @@
+{"version":3,"file":"background.js","mappings":";;;;;AAAA","sources":["webpack://react-extension/./src/background/background.ts"],"sourcesContent":["console.log(\"hello world\");\n"],"names":[],"sourceRoot":""}
