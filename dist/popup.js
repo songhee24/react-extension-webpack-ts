@@ -33466,7 +33466,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 
 
-const popup = react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Hello World");
+const popup = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Hello World"),
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "icon.png" })));
 const root = document.createElement("div");
 document.body.append(root);
 const container = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
