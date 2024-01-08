@@ -3,8 +3,14 @@
   "name": "React Extension",
   "description": "Chrome Extension in React!",
   "version": "1.0.0",
+  "icons": {
+    "16": "icon.gif",
+    "48": "icon.gif",
+    "128": "icon.gif"
+  },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "React Extension"
+    "default_title": "React Extension",
+    "default_icon": "icon.gif"
   }
 }
