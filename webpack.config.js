@@ -26,11 +26,7 @@ module.exports = {
         },
       ],
     }),
-    new HtmlWebPlugin({
-      title: "React Extension",
-      filename: "popup.html",
-      chunks: ["popup"],
-    }),
+    ...getHtmlPlugins(["popup", "options"]),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -39,4 +35,15 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
+};
+
+const getHtmlPlugins = (chunks) => {
+  return chunks.map(
+    (chunk) =>
+      new HtmlWebPlugin({
+        title: "React Extension",
+        filename: `${chunk}.html`,
+        chunks: [chunk],
+      })
+  );
 };
