@@ -12,5 +12,6 @@
     "default_popup": "popup.html",
     "default_title": "React Extension",
     "default_icon": "icon.gif"
-  }
+  },
+  "options": "options.html"
 }
