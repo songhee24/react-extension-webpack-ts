@@ -32,6 +32,10 @@ module.exports = {
         test: /\.css$/i,
         // exclude: /node_modules/,
       },
+      {
+        type: "assets/resource",
+        test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
+      },
     ],
   },
   plugins: [
