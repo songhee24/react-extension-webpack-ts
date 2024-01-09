@@ -1,6 +1,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const getHtmlPlugins = (chunks) => {
   return chunks.map(
@@ -42,6 +43,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+    }),
     new CopyPlugin({
       patterns: [
         {
