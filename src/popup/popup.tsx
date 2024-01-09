@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "./popup.css";
 
-const popup = (
+const App: React.FC = () => (
   <div>
     <p>Hello World</p>
     <img src="icon.png" />
@@ -12,4 +12,4 @@ const popup = (
 const root = document.createElement("div");
 document.body.append(root);
 const container = createRoot(root);
-container.render(popup);
+container.render(<App />);

@@ -101,13 +101,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const popup = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+const App = () => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Hello World"),
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "icon.png" })));
 const root = document.createElement("div");
 document.body.append(root);
 const container = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
-container.render(popup);
+container.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, null));
 
 
 /***/ })
