@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "React Extension",
-  "description": "Chrome Extension in React!",
+  "name": "Weather Extension",
+  "description": "Chrome Weather Ext with React!",
   "version": "1.0.0",
   "icons": {
     "16": "icon.png",
