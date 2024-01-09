@@ -7,4 +7,7 @@ export async function fetchWeatherData(city: string): Promise<any> {
   if (!res.ok) {
     throw new Error("Something Went Wrong");
   }
+
+  const data = await res.json();
+  return data;
 }
