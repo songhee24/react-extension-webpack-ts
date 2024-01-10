@@ -19,7 +19,7 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   }
 
   return (
-    <Box>
+    <Box mx={"4px"} my={"16px"}>
       <Card>
         <CardContent>
           <Typography variant="h5">{weatherData.name}</Typography>
