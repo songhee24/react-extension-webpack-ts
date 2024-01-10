@@ -108,6 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const WeatherCard = ({ city }) => {
+    const [weatherData, setWeatherData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)("Bishkek")
             .then((data) => console.log(data))

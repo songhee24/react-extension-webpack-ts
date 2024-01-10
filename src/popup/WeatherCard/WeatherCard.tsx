@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 
-import { fetchWeatherData } from "../../utils/api";
+import { fetchWeatherData, OpenWeatherData } from "../../utils/api";
 
 const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
+  const [weatherData, setWeatherData] = useState<OpenWeatherData | null>(null);
+
   useEffect(() => {
     fetchWeatherData("Bishkek")
       .then((data) => console.log(data))
