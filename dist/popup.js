@@ -23,11 +23,11 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background-color: #f5f5f5;
-  width: 460px;
+  width: 320px;
   height: 512px;
   font-family: 'Roboto';
 }
-`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,qBAAqB;AACvB","sourcesContent":["body {\n  background-color: #f5f5f5;\n  width: 460px;\n  height: 512px;\n  font-family: 'Roboto';\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,qBAAqB;AACvB","sourcesContent":["body {\n  background-color: #f5f5f5;\n  width: 320px;\n  height: 512px;\n  font-family: 'Roboto';\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
