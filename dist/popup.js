@@ -88,6 +88,53 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/popup/WeatherCard/WeatherCard.tsx":
+/*!***********************************************!*\
+  !*** ./src/popup/WeatherCard/WeatherCard.tsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/api */ "./src/utils/api.ts");
+
+
+const WeatherCard = ({ city }) => {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)("Bishkek")
+            .then((data) => console.log(data))
+            .catch((err) => {
+            console.log(err);
+        });
+    }, [city]);
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, city);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WeatherCard);
+
+
+/***/ }),
+
+/***/ "./src/popup/WeatherCard/index.tsx":
+/*!*****************************************!*\
+  !*** ./src/popup/WeatherCard/index.tsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _WeatherCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WeatherCard */ "./src/popup/WeatherCard/WeatherCard.tsx");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_WeatherCard__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+/***/ }),
+
 /***/ "./src/popup/popup.tsx":
 /*!*****************************!*\
   !*** ./src/popup/popup.tsx ***!
@@ -99,17 +146,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _popup_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popup.css */ "./src/popup/popup.css");
+/* harmony import */ var _WeatherCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WeatherCard */ "./src/popup/WeatherCard/index.tsx");
+
 
 
 
 const App = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "icon.png" })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_3__["default"], { city: "Bishkek" })));
 };
 const root = document.createElement("div");
 document.body.append(root);
 const container = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(root);
 container.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, null));
+
+
+/***/ }),
+
+/***/ "./src/utils/api.ts":
+/*!**************************!*\
+  !*** ./src/utils/api.ts ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   fetchWeatherData: () => (/* binding */ fetchWeatherData)
+/* harmony export */ });
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const OPEN_WEATHER_API_KEY = "396f40c68c5687dfeeda306c4d8280ab";
+function fetchWeatherData(city) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const res = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}`);
+        if (!res.ok) {
+            throw new Error("Something Went Wrong");
+        }
+        const data = yield res.json();
+        return data;
+    });
+}
 
 
 /***/ })

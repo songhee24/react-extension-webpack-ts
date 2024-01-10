@@ -1,11 +1,12 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./popup.css";
+import WeatherCard from "./WeatherCard";
 
 const App: React.FC = () => {
   return (
     <div>
-      <img src="icon.png" />
+      <WeatherCard city={"Bishkek"} />
     </div>
   );
 };
