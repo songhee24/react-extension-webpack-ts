@@ -22,6 +22,10 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
     <Card>
       <CardContent>
         <Typography variant="h5">{weatherData.name}</Typography>
+        <Typography variant="body1">{weatherData.main.temp}</Typography>
+        <Typography variant="body1">
+          Feels Like {weatherData.main.feels_like}
+        </Typography>
       </CardContent>
     </Card>
   );
