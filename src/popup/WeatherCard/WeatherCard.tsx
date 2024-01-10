@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Card, CardContent, Typography } from "@mui/material";
+
 import { fetchWeatherData } from "../../utils/api";
 
 const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
@@ -9,7 +11,13 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
         console.log(err);
       });
   }, [city]);
-  return <div>{city}</div>;
+  return (
+    <Card>
+      <CardContent>
+        <Typography variant="h5">{city}</Typography>
+      </CardContent>
+    </Card>
+  );
 };
 
 export default WeatherCard;
