@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 
 import { fetchWeatherData, OpenWeatherData } from "../../utils/api";
 
@@ -19,17 +19,19 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   }
 
   return (
-    <Card>
-      <CardContent>
-        <Typography variant="h5">{weatherData.name}</Typography>
-        <Typography variant="body1">
-          {Math.round(weatherData.main.temp)}
-        </Typography>
-        <Typography variant="body1">
-          Feels Like {Math.round(weatherData.main.feels_like)}
-        </Typography>
-      </CardContent>
-    </Card>
+    <Box>
+      <Card>
+        <CardContent>
+          <Typography variant="h5">{weatherData.name}</Typography>
+          <Typography variant="body1">
+            {Math.round(weatherData.main.temp)}
+          </Typography>
+          <Typography variant="body1">
+            Feels Like {Math.round(weatherData.main.feels_like)}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
 
