@@ -7,7 +7,7 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   const [weatherData, setWeatherData] = useState<OpenWeatherData | null>(null);
 
   useEffect(() => {
-    fetchWeatherData("Bishkek")
+    fetchWeatherData(city)
       .then((data) => setWeatherData(data))
       .catch((err) => {
         console.log(err);

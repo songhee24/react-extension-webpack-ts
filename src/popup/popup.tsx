@@ -7,6 +7,7 @@ const App: React.FC = () => {
   return (
     <div>
       <WeatherCard city={"Bishkek"} />
+      <WeatherCard city={"Osh"} />
     </div>
   );
 };

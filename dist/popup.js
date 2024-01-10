@@ -111,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 const WeatherCard = ({ city }) => {
     const [weatherData, setWeatherData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)("Bishkek")
+        (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(city)
             .then((data) => setWeatherData(data))
             .catch((err) => {
             console.log(err);
@@ -169,7 +169,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const App = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_3__["default"], { city: "Bishkek" })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_3__["default"], { city: "Bishkek" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_3__["default"], { city: "Osh" })));
 };
 const root = document.createElement("div");
 document.body.append(root);
