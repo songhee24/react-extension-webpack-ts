@@ -11,3 +11,5 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   }, [city]);
   return <div>{city}</div>;
 };
+
+export default WeatherCard;
