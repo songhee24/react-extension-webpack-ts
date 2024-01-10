@@ -111,14 +111,17 @@ const WeatherCard = ({ city }) => {
     const [weatherData, setWeatherData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)("Bishkek")
-            .then((data) => console.log(data))
+            .then((data) => setWeatherData(data))
             .catch((err) => {
             console.log(err);
         });
     }, [city]);
+    if (!weatherData) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading...");
+    }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_2__["default"], null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_3__["default"], null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], { variant: "h5" }, city))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], { variant: "h5" }, weatherData.name))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WeatherCard);
 

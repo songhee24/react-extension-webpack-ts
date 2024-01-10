@@ -8,15 +8,20 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
 
   useEffect(() => {
     fetchWeatherData("Bishkek")
-      .then((data) => console.log(data))
+      .then((data) => setWeatherData(data))
       .catch((err) => {
         console.log(err);
       });
   }, [city]);
+
+  if (!weatherData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Card>
       <CardContent>
-        <Typography variant="h5">{city}</Typography>
+        <Typography variant="h5">{weatherData.name}</Typography>
       </CardContent>
     </Card>
   );
