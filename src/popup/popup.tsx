@@ -40,7 +40,7 @@ const App: React.FC = () => {
         </Grid>
       </Grid>
       {cities.map((city) => (
-        <WeatherCard city={city} key={city} />
+        <WeatherCard city={city} key={city} onDelete={() => {}} />
       ))}
       <Box height="16px" />
     </Box>

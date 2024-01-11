@@ -19,7 +19,11 @@ const WeatherCardContainer: React.FC<{
       <Card>
         <CardContent>{children}</CardContent>
         <CardActions>
-          {onDelete && <Button onClick={onDelete}>Delete</Button>}
+          {onDelete && (
+            <Button color={"secondary"} onClick={onDelete}>
+              Delete
+            </Button>
+          )}
         </CardActions>
       </Card>
     </Box>
