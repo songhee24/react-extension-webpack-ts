@@ -108,6 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const WeatherCardContainer = () => { };
 const WeatherCard = ({ city }) => {
     const [weatherData, setWeatherData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {

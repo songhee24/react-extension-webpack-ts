@@ -3,6 +3,8 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 
 import { fetchWeatherData, OpenWeatherData } from "../../utils/api";
 
+const WeatherCardContainer: React.FC<{ children: React.ReactNode }> = () => {};
+
 const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   const [weatherData, setWeatherData] = useState<OpenWeatherData | null>(null);
 
