@@ -14,9 +14,10 @@ const WeatherCardContainer: React.FC<{ children: React.ReactNode }> = ({
     </Box>
   );
 };
-
+type WeatherCardState = "loading" | "error" | "ready";
 const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   const [weatherData, setWeatherData] = useState<OpenWeatherData | null>(null);
+  const [cardState, setCardState] = useState<WeatherCardState>("loading");
 
   useEffect(() => {
     fetchWeatherData(city)
