@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import AddBoxIcon from "@mui/icons-material/AddBox";
-import { InputBase, IconButton, Paper, Box } from "@mui/material";
+import { InputBase, IconButton, Paper, Box, Grid } from "@mui/material";
 
 import "fontsource-roboto";
 
@@ -13,12 +13,18 @@ const App: React.FC = () => {
 
   return (
     <Box mx="8px" my="16px">
-      <Paper>
-        <InputBase />
-        <IconButton>
-          <AddBoxIcon />
-        </IconButton>
-      </Paper>
+      <Grid container>
+        <Grid item>
+          <Paper>
+            <Box px={"15px"} py={"5px"}>
+              <InputBase placeholder="Add a city name" />
+              <IconButton>
+                <AddBoxIcon />
+              </IconButton>
+            </Box>
+          </Paper>
+        </Grid>
+      </Grid>
       {cities.map((city) => (
         <WeatherCard city={city} key={city} />
       ))}
