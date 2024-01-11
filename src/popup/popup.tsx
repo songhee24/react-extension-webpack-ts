@@ -12,6 +12,15 @@ const App: React.FC = () => {
   const [cities, setCities] = useState<string[]>(["Bishkek", "Osh", "Error"]);
 
   const [cityInput, setCityInput] = useState<string>("");
+
+  const handleCityButtonClick = () => {
+    if (cityInput === "") {
+      return;
+    }
+    setCities([...cities, cityInput]);
+    setCityInput("");
+  };
+
   return (
     <Box mx="8px" my="16px">
       <Grid container>

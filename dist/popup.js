@@ -189,6 +189,13 @@ __webpack_require__.r(__webpack_exports__);
 const App = () => {
     const [cities, setCities] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["Bishkek", "Osh", "Error"]);
     const [cityInput, setCityInput] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+    const handleCityButtonClick = () => {
+        if (cityInput === "") {
+            return;
+        }
+        setCities([...cities, cityInput]);
+        setCityInput("");
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { mx: "8px", my: "16px" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { container: true },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { item: true },
