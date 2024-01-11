@@ -199,6 +199,10 @@ const App = () => {
         setCities([...cities, cityInput]);
         setCityInput("");
     };
+    const handleCityDeleteButtonClick = (index) => {
+        cities.splice(index, 1);
+        setCities([...cities]);
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { sx: { overflow: "hidden", overflowY: "scroll" }, mx: "8px", my: "16px" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { container: true },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { item: true },

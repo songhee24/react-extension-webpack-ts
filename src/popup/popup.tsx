@@ -21,6 +21,11 @@ const App: React.FC = () => {
     setCityInput("");
   };
 
+  const handleCityDeleteButtonClick = (index: number) => {
+    cities.splice(index, 1);
+    setCities([...cities]);
+  };
+
   return (
     <Box sx={{ overflow: "hidden", overflowY: "scroll" }} mx="8px" my="16px">
       <Grid container>
