@@ -127,8 +127,9 @@ const WeatherCard = ({ city }) => {
             setCardState("error");
         });
     }, [city]);
-    if (!weatherData) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(WeatherCardContainer, null, "Loading...");
+    if (cardState === "loading" || cardState === "error") {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(WeatherCardContainer, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { variant: "body1" }, cardState === "loading" ? "Loading..." : "Error could not fetch")));
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(WeatherCardContainer, null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { variant: "h5" }, weatherData.name),

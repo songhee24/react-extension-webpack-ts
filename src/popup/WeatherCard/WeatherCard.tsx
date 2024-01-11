@@ -31,8 +31,14 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
       });
   }, [city]);
 
-  if (!weatherData) {
-    return <WeatherCardContainer>Loading...</WeatherCardContainer>;
+  if (cardState === "loading" || cardState === "error") {
+    return (
+      <WeatherCardContainer>
+        <Typography variant="body1">
+          {cardState === "loading" ? "Loading..." : "Error could not fetch"}
+        </Typography>
+      </WeatherCardContainer>
+    );
   }
 
   return (
