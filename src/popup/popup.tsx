@@ -32,7 +32,7 @@ const App: React.FC = () => {
                 onChange={(event) => setCityInput(event.target.value)}
                 placeholder="Add a city name"
               />
-              <IconButton>
+              <IconButton onClick={handleCityButtonClick}>
                 <AddBoxIcon />
               </IconButton>
             </Box>
