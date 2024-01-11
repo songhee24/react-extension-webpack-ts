@@ -22,7 +22,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Box mx="8px" my="16px">
+    <Box sx={{ overflow: "hidden", overflowY: "scroll" }} mx="8px" my="16px">
       <Grid container>
         <Grid item>
           <Paper>
@@ -42,6 +42,7 @@ const App: React.FC = () => {
       {cities.map((city) => (
         <WeatherCard city={city} key={city} />
       ))}
+      <Box height="16px" />
     </Box>
   );
 };
