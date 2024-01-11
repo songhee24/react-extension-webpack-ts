@@ -27,7 +27,7 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   }, [city]);
 
   if (!weatherData) {
-    return <div>Loading...</div>;
+    return <WeatherCardContainer>Loading...</WeatherCardContainer>;
   }
 
   return (
