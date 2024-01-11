@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <div>
       <WeatherCard city={"Bishkek"} />
       <WeatherCard city={"Osh"} />
+      <WeatherCard city={"Error"} />
     </div>
   );
 };
