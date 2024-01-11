@@ -118,9 +118,13 @@ const WeatherCard = ({ city }) => {
     const [cardState, setCardState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("loading");
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(city)
-            .then((data) => setWeatherData(data))
+            .then((data) => {
+            setWeatherData(data);
+            setCardState("ready");
+        })
             .catch((err) => {
             console.log(err);
+            setCardState("error");
         });
     }, [city]);
     if (!weatherData) {

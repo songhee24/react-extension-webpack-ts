@@ -21,9 +21,13 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
 
   useEffect(() => {
     fetchWeatherData(city)
-      .then((data) => setWeatherData(data))
+      .then((data) => {
+        setWeatherData(data);
+        setCardState("ready");
+      })
       .catch((err) => {
         console.log(err);
+        setCardState("error");
       });
   }, [city]);
 
