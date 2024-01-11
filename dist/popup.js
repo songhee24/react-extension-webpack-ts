@@ -211,7 +211,7 @@ const App = () => {
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { value: cityInput, onChange: (event) => setCityInput(event.target.value), placeholder: "Add a city name" }),
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { onClick: handleCityButtonClick },
                             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_10__["default"], null)))))),
-        cities.map((city) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: city, key: city, onDelete: () => { } }))),
+        cities.map((city, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: city, key: city, onDelete: () => handleCityDeleteButtonClick(index) }))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { height: "16px" })));
 };
 const root = document.createElement("div");

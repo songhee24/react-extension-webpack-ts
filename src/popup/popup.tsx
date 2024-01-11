@@ -44,8 +44,12 @@ const App: React.FC = () => {
           </Paper>
         </Grid>
       </Grid>
-      {cities.map((city) => (
-        <WeatherCard city={city} key={city} onDelete={() => {}} />
+      {cities.map((city, index) => (
+        <WeatherCard
+          city={city}
+          key={city}
+          onDelete={() => handleCityDeleteButtonClick(index)}
+        />
       ))}
       <Box height="16px" />
     </Box>
