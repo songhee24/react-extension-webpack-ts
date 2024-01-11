@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import { InputBase, IconButton, Paper } from "@mui/material";
+
 import "fontsource-roboto";
 
 import "./popup.css";
@@ -10,6 +13,12 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <Paper>
+        <InputBase />
+        <IconButton>
+          <AddBoxIcon />
+        </IconButton>
+      </Paper>
       {cities.map((city) => (
         <WeatherCard city={city} key={city} />
       ))}
