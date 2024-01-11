@@ -11,13 +11,18 @@ import WeatherCard from "./WeatherCard";
 const App: React.FC = () => {
   const [cities, setCities] = useState<string[]>(["Bishkek", "Osh", "Error"]);
 
+  const [cityInput, setCityInput] = useState<string>("");
   return (
     <Box mx="8px" my="16px">
       <Grid container>
         <Grid item>
           <Paper>
             <Box px={"15px"} py={"5px"}>
-              <InputBase placeholder="Add a city name" />
+              <InputBase
+                value={cityInput}
+                onChange={(event) => setCityInput(event.target.value)}
+                placeholder="Add a city name"
+              />
               <IconButton>
                 <AddBoxIcon />
               </IconButton>
