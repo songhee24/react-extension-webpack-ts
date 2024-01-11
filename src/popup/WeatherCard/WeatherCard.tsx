@@ -31,19 +31,15 @@ const WeatherCard: React.FC<{ city: string }> = ({ city }) => {
   }
 
   return (
-    <Box mx={"4px"} my={"16px"}>
-      <Card>
-        <CardContent>
-          <Typography variant="h5">{weatherData.name}</Typography>
-          <Typography variant="body1">
-            {Math.round(weatherData.main.temp)}
-          </Typography>
-          <Typography variant="body1">
-            Feels Like {Math.round(weatherData.main.feels_like)}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Box>
+    <WeatherCardContainer>
+      <Typography variant="h5">{weatherData.name}</Typography>
+      <Typography variant="body1">
+        {Math.round(weatherData.main.temp)}
+      </Typography>
+      <Typography variant="body1">
+        Feels Like {Math.round(weatherData.main.feels_like)}
+      </Typography>
+    </WeatherCardContainer>
   );
 };
 
