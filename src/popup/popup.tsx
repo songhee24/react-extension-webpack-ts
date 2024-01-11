@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import AddBoxIcon from "@mui/icons-material/AddBox";
-import { InputBase, IconButton, Paper } from "@mui/material";
+import { InputBase, IconButton, Paper, Box } from "@mui/material";
 
 import "fontsource-roboto";
 
@@ -12,7 +12,7 @@ const App: React.FC = () => {
   const [cities, setCities] = useState<string[]>(["Bishkek", "Osh", "Error"]);
 
   return (
-    <div>
+    <Box mx="8px" my="16px">
       <Paper>
         <InputBase />
         <IconButton>
@@ -22,7 +22,7 @@ const App: React.FC = () => {
       {cities.map((city) => (
         <WeatherCard city={city} key={city} />
       ))}
-    </div>
+    </Box>
   );
 };
 

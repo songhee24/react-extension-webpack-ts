@@ -170,10 +170,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/icons-material/AddBox */ "./node_modules/@mui/icons-material/AddBox.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputBase/InputBase.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
+/* harmony import */ var _mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/icons-material/AddBox */ "./node_modules/@mui/icons-material/AddBox.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputBase/InputBase.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
 /* harmony import */ var fontsource_roboto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fontsource-roboto */ "./node_modules/fontsource-roboto/index.css");
 /* harmony import */ var _popup_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup.css */ "./src/popup/popup.css");
 /* harmony import */ var _WeatherCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WeatherCard */ "./src/popup/WeatherCard/index.tsx");
@@ -186,11 +187,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const App = () => {
     const [cities, setCities] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["Bishkek", "Osh", "Error"]);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], null),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_8__["default"], null))),
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { mx: "8px", my: "16px" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_9__["default"], null))),
         cities.map((city) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: city, key: city })))));
 };
 const root = document.createElement("div");
