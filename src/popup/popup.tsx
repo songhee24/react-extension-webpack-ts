@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import "fontsource-roboto";
 
@@ -6,11 +6,13 @@ import "./popup.css";
 import WeatherCard from "./WeatherCard";
 
 const App: React.FC = () => {
+  const [cities, setCities] = useState<string[]>(["Bishkek", "Osh", "Error"]);
+
   return (
     <div>
-      <WeatherCard city={"Bishkek"} />
-      <WeatherCard city={"Osh"} />
-      <WeatherCard city={"Error"} />
+      {cities.map((city) => (
+        <WeatherCard city={city} key={city} />
+      ))}
     </div>
   );
 };
