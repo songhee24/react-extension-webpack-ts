@@ -126,6 +126,9 @@ console.log("background hello world");
 chrome.runtime.onInstalled.addListener(() => {
     //  TODO doesn't work
     (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredCities)([]);
+    (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredOptions)({
+        tempScale: "metric",
+    });
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse("from the background script");
