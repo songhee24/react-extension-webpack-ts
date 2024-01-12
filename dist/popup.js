@@ -242,7 +242,7 @@ const App = () => {
                             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_11__["default"], null))))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { item: true },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { sx: { height: "100%" } },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { py: "2px" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { py: "2px", px: "3px" },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleTempScaleButtonClick }, options.tempScale === "metric" ? "\u2103" : "\u2109"))))),
         cities.map((city, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: city, key: index, onDelete: () => handleCityDeleteButtonClick(index) }))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { height: "16px" })));
@@ -275,9 +275,9 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
     });
 };
 const OPEN_WEATHER_API_KEY = "396f40c68c5687dfeeda306c4d8280ab";
-function fetchWeatherData(city) {
+function fetchWeatherData(city, tempScale) {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}`);
+        const res = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${tempScale}&appid=${OPEN_WEATHER_API_KEY}`);
         if (!res.ok) {
             throw new Error("Something Went Wrong");
         }

@@ -76,7 +76,7 @@ const App: React.FC = () => {
         </Grid>
         <Grid item>
           <Paper sx={{ height: "100%" }}>
-            <Box py="2px">
+            <Box py="2px" px={"3px"}>
               <IconButton onClick={handleTempScaleButtonClick}>
                 {options.tempScale === "metric" ? "\u2103" : "\u2109"}
               </IconButton>
