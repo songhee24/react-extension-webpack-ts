@@ -63,6 +63,13 @@ const App: React.FC = () => {
             </Box>
           </Paper>
         </Grid>
+        <Grid item>
+          <Paper>
+            <IconButton>
+              {options.tempScale === "metric" ? "\u2103" : "\u2109"}
+            </IconButton>
+          </Paper>
+        </Grid>
       </Grid>
       {cities.map((city, index) => (
         <WeatherCard
