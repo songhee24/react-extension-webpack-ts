@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import { InputBase, IconButton, Paper, Box, Grid } from "@mui/material";
@@ -7,11 +7,16 @@ import "fontsource-roboto";
 
 import "./popup.css";
 import WeatherCard from "./WeatherCard";
+import { getStoredCities } from "../utils/storage";
 
 const App: React.FC = () => {
-  const [cities, setCities] = useState<string[]>(["Bishkek", "Osh", "Error"]);
+  const [cities, setCities] = useState<string[]>([]);
 
   const [cityInput, setCityInput] = useState<string>("");
+
+  useEffect(() => {
+    getStoredCities().then((cities) => setCities(cities));
+  }, []);
 
   const handleCityButtonClick = () => {
     if (cityInput === "") {
