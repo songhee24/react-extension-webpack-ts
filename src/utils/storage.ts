@@ -8,15 +8,12 @@ export function setStoredCities(cities: string[]): Promise<void> {
   const vals: LocalStorage = {
     cities,
   };
+
+  console.log("vals", vals);
   return new Promise((resolve, reject) => {
-    chrome.storage.local.set(
-      {
-        vals,
-      },
-      () => {
-        resolve();
-      }
-    );
+    chrome.storage.local.set(vals, () => {
+      resolve();
+    });
   });
 }
 
@@ -24,7 +21,7 @@ export function getStoredCities(): Promise<string[]> {
   const keys: LocalStorageKeys[] = ["cities"];
   return new Promise((resolve) => {
     chrome.storage.local.get(keys, (result: LocalStorage) => {
-      resolve(result.cities);
+      resolve(result.cities ?? []);
     });
   });
 }

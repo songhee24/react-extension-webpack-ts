@@ -289,10 +289,9 @@ function setStoredCities(cities) {
     const vals = {
         cities,
     };
+    console.log("vals", vals);
     return new Promise((resolve, reject) => {
-        chrome.storage.local.set({
-            vals,
-        }, () => {
+        chrome.storage.local.set(vals, () => {
             resolve();
         });
     });
@@ -301,7 +300,8 @@ function getStoredCities() {
     const keys = ["cities"];
     return new Promise((resolve) => {
         chrome.storage.local.get(keys, (result) => {
-            resolve(result.cities);
+            var _a;
+            resolve((_a = result.cities) !== null && _a !== void 0 ? _a : []);
         });
     });
 }

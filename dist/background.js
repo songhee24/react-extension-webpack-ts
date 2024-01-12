@@ -17,10 +17,9 @@ function setStoredCities(cities) {
     const vals = {
         cities,
     };
+    console.log("vals", vals);
     return new Promise((resolve, reject) => {
-        chrome.storage.local.set({
-            vals,
-        }, () => {
+        chrome.storage.local.set(vals, () => {
             resolve();
         });
     });
@@ -29,7 +28,8 @@ function getStoredCities() {
     const keys = ["cities"];
     return new Promise((resolve) => {
         chrome.storage.local.get(keys, (result) => {
-            resolve(result.cities);
+            var _a;
+            resolve((_a = result.cities) !== null && _a !== void 0 ? _a : []);
         });
     });
 }
@@ -104,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log("background hello world");
 chrome.runtime.onInstalled.addListener(() => {
+    //  TODO doesn't work
     (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredCities)([]);
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
