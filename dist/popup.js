@@ -288,7 +288,8 @@ function getStoredCities() {
     const keys = ["cities"];
     return new Promise((resolve) => {
         chrome.storage.local.get(keys, (result) => {
-            resolve(result.cities);
+            var _a;
+            resolve((_a = result.cities) !== null && _a !== void 0 ? _a : []);
         });
     });
 }
