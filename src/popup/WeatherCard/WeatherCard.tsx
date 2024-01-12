@@ -52,7 +52,7 @@ const WeatherCard: React.FC<{
         console.log(err);
         setCardState("error");
       });
-  }, [city]);
+  }, [city, tempScale]);
 
   if (cardState === "loading" || cardState === "error") {
     return (

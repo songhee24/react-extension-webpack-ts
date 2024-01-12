@@ -129,7 +129,7 @@ const WeatherCard = ({ city, onDelete, tempScale }) => {
             console.log(err);
             setCardState("error");
         });
-    }, [city]);
+    }, [city, tempScale]);
     if (cardState === "loading" || cardState === "error") {
         return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(WeatherCardContainer, { onDelete: onDelete },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { variant: "body1" }, cardState === "loading" ? "Loading..." : "Error could not fetch")));
@@ -244,7 +244,7 @@ const App = () => {
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { sx: { height: "100%" } },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { py: "2px", px: "3px" },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleTempScaleButtonClick }, options.tempScale === "metric" ? "\u2103" : "\u2109"))))),
-        cities.map((city, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: city, key: index, onDelete: () => handleCityDeleteButtonClick(index) }))),
+        cities.map((city, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { tempScale: options.tempScale, city: city, key: index, onDelete: () => handleCityDeleteButtonClick(index) }))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { height: "16px" })));
 };
 const root = document.createElement("div");
