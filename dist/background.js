@@ -11,7 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getStoredCities: () => (/* binding */ getStoredCities),
-/* harmony export */   setStoredCities: () => (/* binding */ setStoredCities)
+/* harmony export */   setStoredCities: () => (/* binding */ setStoredCities),
+/* harmony export */   setStoredOptions: () => (/* binding */ setStoredOptions)
 /* harmony export */ });
 function setStoredCities(cities) {
     const vals = {
@@ -30,6 +31,16 @@ function getStoredCities() {
         chrome.storage.local.get(keys, (result) => {
             var _a;
             resolve((_a = result.cities) !== null && _a !== void 0 ? _a : []);
+        });
+    });
+}
+function setStoredOptions(options) {
+    const vals = {
+        options,
+    };
+    return new Promise((resolve) => {
+        chrome.storage.local.set(vals, () => {
+            resolve();
         });
     });
 }
