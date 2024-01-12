@@ -223,6 +223,12 @@ const App = () => {
         yield (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.setStoredCities)(updatedCities);
         setCities(updatedCities);
     });
+    const handleTempScaleButtonClick = () => {
+        const updateOptions = Object.assign(Object.assign({}, options), { tempScale: options.tempScale === "metric" ? "imperial" : "metric" });
+        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.setStoredOptions)(updateOptions).then(() => {
+            setOptions(updateOptions);
+        });
+    };
     if (!options) {
         return null;
     }

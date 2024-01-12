@@ -12,6 +12,7 @@ import {
   getStoredOptions,
   LocalStorageOptions,
   setStoredCities,
+  setStoredOptions,
 } from "../utils/storage";
 
 const App: React.FC = () => {
@@ -40,6 +41,16 @@ const App: React.FC = () => {
     const updatedCities = [...cities];
     await setStoredCities(updatedCities);
     setCities(updatedCities);
+  };
+
+  const handleTempScaleButtonClick = () => {
+    const updateOptions: LocalStorageOptions = {
+      ...options,
+      tempScale: options.tempScale === "metric" ? "imperial" : "metric",
+    };
+    setStoredOptions(updateOptions).then(() => {
+      setOptions(updateOptions);
+    });
   };
 
   if (!options) {
