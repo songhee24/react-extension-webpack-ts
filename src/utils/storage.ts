@@ -1,7 +1,9 @@
+import { OpenWeatherTempScale } from "./api";
+
 export interface LocalStorage {
   cities?: string[];
   options?: {
-    tempScale: string;
+    tempScale: OpenWeatherTempScale;
   };
 }
 
