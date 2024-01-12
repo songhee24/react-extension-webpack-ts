@@ -28,9 +28,11 @@ const App: React.FC = () => {
     setCityInput("");
   };
 
-  const handleCityDeleteButtonClick = (index: number) => {
+  const handleCityDeleteButtonClick = async (index: number) => {
     cities.splice(index, 1);
-    setCities([...cities]);
+    const updatedCities = [...cities];
+    await setStoredCities(updatedCities);
+    setCities(updatedCities);
   };
 
   return (
