@@ -48,7 +48,7 @@ const App: React.FC = () => {
 
   return (
     <Box sx={{ overflow: "hidden", overflowY: "scroll" }} mx="8px" my="16px">
-      <Grid container>
+      <Grid container justifyContent={"space-evenly"}>
         <Grid item>
           <Paper>
             <Box px={"15px"} py={"5px"}>
@@ -64,10 +64,12 @@ const App: React.FC = () => {
           </Paper>
         </Grid>
         <Grid item>
-          <Paper>
-            <IconButton>
-              {options.tempScale === "metric" ? "\u2103" : "\u2109"}
-            </IconButton>
+          <Paper sx={{ height: "100%" }}>
+            <Box py="2px">
+              <IconButton>
+                {options.tempScale === "metric" ? "\u2103" : "\u2109"}
+              </IconButton>
+            </Box>
           </Paper>
         </Grid>
       </Grid>
