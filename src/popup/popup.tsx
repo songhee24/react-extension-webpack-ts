@@ -7,7 +7,7 @@ import "fontsource-roboto";
 
 import "./popup.css";
 import WeatherCard from "./WeatherCard";
-import { getStoredCities } from "../utils/storage";
+import { getStoredCities, setStoredCities } from "../utils/storage";
 
 const App: React.FC = () => {
   const [cities, setCities] = useState<string[]>([]);
@@ -18,11 +18,13 @@ const App: React.FC = () => {
     getStoredCities().then((cities) => setCities(cities));
   }, []);
 
-  const handleCityButtonClick = () => {
+  const handleCityButtonClick = async () => {
     if (cityInput === "") {
       return;
     }
-    setCities([...cities, cityInput]);
+    const updatedCities = [...cities, cityInput];
+    await setStoredCities(updatedCities);
+    setCities(updatedCities);
     setCityInput("");
   };
 

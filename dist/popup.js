@@ -183,6 +183,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _popup_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup.css */ "./src/popup/popup.css");
 /* harmony import */ var _WeatherCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WeatherCard */ "./src/popup/WeatherCard/index.tsx");
 /* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/storage */ "./src/utils/storage.ts");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 
 
 
@@ -197,13 +206,15 @@ const App = () => {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.getStoredCities)().then((cities) => setCities(cities));
     }, []);
-    const handleCityButtonClick = () => {
+    const handleCityButtonClick = () => __awaiter(void 0, void 0, void 0, function* () {
         if (cityInput === "") {
             return;
         }
-        setCities([...cities, cityInput]);
+        const updatedCities = [...cities, cityInput];
+        yield (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.setStoredCities)(updatedCities);
+        setCities(updatedCities);
         setCityInput("");
-    };
+    });
     const handleCityDeleteButtonClick = (index) => {
         cities.splice(index, 1);
         setCities([...cities]);
