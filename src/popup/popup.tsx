@@ -42,6 +42,10 @@ const App: React.FC = () => {
     setCities(updatedCities);
   };
 
+  if (!options) {
+    return null;
+  }
+
   return (
     <Box sx={{ overflow: "hidden", overflowY: "scroll" }} mx="8px" my="16px">
       <Grid container>

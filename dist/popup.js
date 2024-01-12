@@ -223,6 +223,9 @@ const App = () => {
         yield (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.setStoredCities)(updatedCities);
         setCities(updatedCities);
     });
+    if (!options) {
+        return null;
+    }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { sx: { overflow: "hidden", overflowY: "scroll" }, mx: "8px", my: "16px" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { container: true },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { item: true },
