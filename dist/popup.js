@@ -203,8 +203,10 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 const App = () => {
     const [cities, setCities] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const [cityInput, setCityInput] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+    const [options, setOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.getStoredCities)().then((cities) => setCities(cities));
+        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_5__.getStoredOptions)().then((options) => setOptions(options));
     }, []);
     const handleCityButtonClick = () => __awaiter(void 0, void 0, void 0, function* () {
         if (cityInput === "") {

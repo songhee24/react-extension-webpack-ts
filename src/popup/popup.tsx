@@ -7,15 +7,22 @@ import "fontsource-roboto";
 
 import "./popup.css";
 import WeatherCard from "./WeatherCard";
-import { getStoredCities, setStoredCities } from "../utils/storage";
+import {
+  getStoredCities,
+  getStoredOptions,
+  LocalStorageOptions,
+  setStoredCities,
+} from "../utils/storage";
 
 const App: React.FC = () => {
   const [cities, setCities] = useState<string[]>([]);
 
   const [cityInput, setCityInput] = useState<string>("");
+  const [options, setOptions] = useState<LocalStorageOptions | null>(null);
 
   useEffect(() => {
     getStoredCities().then((cities) => setCities(cities));
+    getStoredOptions().then((options) => setOptions(options));
   }, []);
 
   const handleCityButtonClick = async () => {
