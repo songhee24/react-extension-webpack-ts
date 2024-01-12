@@ -22,6 +22,8 @@ export interface OpenWeatherData {
   };
 }
 
+export type OpenWeatherTempScale = "metric" | "imperial";
+
 export async function fetchWeatherData(city: string): Promise<OpenWeatherData> {
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}`
