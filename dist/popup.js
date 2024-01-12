@@ -116,11 +116,11 @@ const WeatherCardContainer = ({ children, onDelete }) => {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], null, children),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], null, onDelete && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { color: "secondary", onClick: onDelete }, "Delete"))))));
 };
-const WeatherCard = ({ city, onDelete, }) => {
+const WeatherCard = ({ city, onDelete, tempScale }) => {
     const [weatherData, setWeatherData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [cardState, setCardState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("loading");
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(city)
+        (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(city, tempScale)
             .then((data) => {
             setWeatherData(data);
             setCardState("ready");
