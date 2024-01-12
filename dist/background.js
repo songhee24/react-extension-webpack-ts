@@ -11,6 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getStoredCities: () => (/* binding */ getStoredCities),
+/* harmony export */   getStoredOptions: () => (/* binding */ getStoredOptions),
 /* harmony export */   setStoredCities: () => (/* binding */ setStoredCities),
 /* harmony export */   setStoredOptions: () => (/* binding */ setStoredOptions)
 /* harmony export */ });
@@ -41,6 +42,14 @@ function setStoredOptions(options) {
     return new Promise((resolve) => {
         chrome.storage.local.set(vals, () => {
             resolve();
+        });
+    });
+}
+function getStoredOptions() {
+    const keys = ["options"];
+    return new Promise((resolve) => {
+        chrome.storage.local.get(keys, (res) => {
+            resolve(res.options);
         });
     });
 }

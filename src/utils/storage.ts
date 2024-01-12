@@ -43,3 +43,12 @@ export function setStoredOptions(options: LocalStorageOptions): Promise<void> {
     });
   });
 }
+
+export function getStoredOptions(): Promise<LocalStorageOptions> {
+  const keys: LocalStorageKeys[] = ["options"];
+  return new Promise((resolve) => {
+    chrome.storage.local.get(keys, (res: LocalStorage) => {
+      resolve(res.options);
+    });
+  });
+}
