@@ -18,9 +18,11 @@ import {
   setStoredOptions,
 } from "../utils/storage";
 
-const App: React.FC<{}> = () => {
-  const [options, setOptions] = useState<LocalStorageOptions>("");
+type FormState = "ready" | "saving";
 
+const App: React.FC<{}> = () => {
+  const [options, setOptions] = useState<LocalStorageOptions | null>(null);
+  const [form, setForm] = useState<FormState>("ready");
   const handleHomeCityChange = (homeCity: string) => {
     setOptions({
       ...options,
@@ -55,7 +57,7 @@ const App: React.FC<{}> = () => {
                 fullWidth
                 variant={"standard"}
                 placeholder="Enter a home city name"
-                value={options.homeCity}
+                value={options.homeCity ?? ""}
                 onChange={(event) => handleHomeCityChange(event.target.value)}
               />
             </Grid>
@@ -65,7 +67,7 @@ const App: React.FC<{}> = () => {
                 color="primary"
                 onClick={handleSaveButtonClick}
               >
-                Save
+                {form === "ready" ? "Save" : "Saving..."}
               </Button>
             </Grid>
           </Grid>
