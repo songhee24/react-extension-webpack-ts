@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const App = () => {
-    const [options, setOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [options, setOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("");
     const handleHomeCityChange = (homeCity) => {
         setOptions(Object.assign(Object.assign({}, options), { homeCity }));
     };

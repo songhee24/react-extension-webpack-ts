@@ -19,7 +19,7 @@ import {
 } from "../utils/storage";
 
 const App: React.FC<{}> = () => {
-  const [options, setOptions] = useState<LocalStorageOptions | null>(null);
+  const [options, setOptions] = useState<LocalStorageOptions>("");
 
   const handleHomeCityChange = (homeCity: string) => {
     setOptions({
