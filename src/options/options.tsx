@@ -17,6 +17,13 @@ import { getStoredOptions, LocalStorageOptions } from "../utils/storage";
 const App: React.FC<{}> = () => {
   const [options, setOptions] = useState<LocalStorageOptions | null>(null);
 
+  const handleHomeCityChange = (homeCity: string) => {
+    setOptions({
+      ...options,
+      homeCity,
+    });
+  };
+
   useEffect(() => {
     getStoredOptions().then((options) => setOptions(options));
   }, []);
@@ -41,6 +48,7 @@ const App: React.FC<{}> = () => {
                 variant={"standard"}
                 placeholder="Enter a home city name"
                 value={options.homeCity}
+                onChange={(event) => handleHomeCityChange(event.target.value)}
               />
             </Grid>
             <Grid item>

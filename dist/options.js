@@ -114,6 +114,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const App = () => {
     const [options, setOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const handleHomeCityChange = (homeCity) => {
+        setOptions(Object.assign(Object.assign({}, options), { homeCity }));
+    };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => setOptions(options));
     }, []);
@@ -129,7 +132,7 @@ const App = () => {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { height: "30px" }),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { variant: "body1" }, "Home city name"),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: options.homeCity })),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: options.homeCity, onChange: (event) => handleHomeCityChange(event.target.value) })),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { variant: "contained", color: "primary" }, "Save")))))));
 };
