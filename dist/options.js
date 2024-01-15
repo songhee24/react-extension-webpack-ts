@@ -133,7 +133,7 @@ const App = () => {
         yield (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.setStoredOptions)(options);
         setTimeout(() => {
             setForm("ready");
-        }, 500);
+        }, 1000);
     });
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => setOptions(options));
@@ -141,6 +141,7 @@ const App = () => {
     if (!options) {
         return null;
     }
+    const isFieldSaving = form === "saving";
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { mx: "15%", my: "2%" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], null,
@@ -150,9 +151,9 @@ const App = () => {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { height: "30px" }),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { variant: "body1" }, "Home city name"),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: (_a = options.homeCity) !== null && _a !== void 0 ? _a : "", onChange: (event) => handleHomeCityChange(event.target.value) })),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: (_a = options.homeCity) !== null && _a !== void 0 ? _a : "", disabled: isFieldSaving, onChange: (event) => handleHomeCityChange(event.target.value) })),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { disabled: form === "saving", variant: "contained", color: "primary", onClick: handleSaveButtonClick }, form === "ready" ? "Save" : "Saving...")))))));
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { disabled: isFieldSaving, variant: "contained", color: "primary", onClick: handleSaveButtonClick }, form === "ready" ? "Save" : "Saving...")))))));
 };
 const root = document.createElement("div");
 document.body.append(root);

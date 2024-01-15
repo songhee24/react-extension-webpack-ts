@@ -35,7 +35,7 @@ const App: React.FC<{}> = () => {
     await setStoredOptions(options);
     setTimeout(() => {
       setForm("ready");
-    }, 500);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -45,6 +45,8 @@ const App: React.FC<{}> = () => {
   if (!options) {
     return null;
   }
+
+  const isFieldSaving = form === "saving";
 
   return (
     <Box mx="15%" my="2%">
@@ -62,12 +64,13 @@ const App: React.FC<{}> = () => {
                 variant={"standard"}
                 placeholder="Enter a home city name"
                 value={options.homeCity ?? ""}
+                disabled={isFieldSaving}
                 onChange={(event) => handleHomeCityChange(event.target.value)}
               />
             </Grid>
             <Grid item>
               <Button
-                disabled={form === "saving"}
+                disabled={isFieldSaving}
                 variant="contained"
                 color="primary"
                 onClick={handleSaveButtonClick}
