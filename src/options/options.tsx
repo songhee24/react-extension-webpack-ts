@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import "fontsource-roboto";
@@ -12,8 +12,19 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { getStoredOptions, LocalStorageOptions } from "../utils/storage";
 
 const App: React.FC<{}> = () => {
+  const [options, setOptions] = useState<LocalStorageOptions | null>(null);
+
+  useEffect(() => {
+    getStoredOptions().then((options) => setOptions(options));
+  }, []);
+
+  if (!options) {
+    return null;
+  }
+
   return (
     <Box mx="15%" my="2%">
       <Card>
