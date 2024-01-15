@@ -9,13 +9,17 @@ const App: React.FC<{}> = () => {
   return (
     <Card>
       <CardContent>
-        <Grid container>
+        <Grid container flex={"flex"} flexDirection={"column"}>
           <Grid item>
             <Typography variant="h4">Weather Extension Options</Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">Home city name</Typography>
-            <TextField placeholder="Enter a home city name" />
+            <TextField
+              fullWidth
+              variant={"standard"}
+              placeholder="Enter a home city name"
+            />
           </Grid>
         </Grid>
       </CardContent>
