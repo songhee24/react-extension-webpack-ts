@@ -12,7 +12,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { getStoredOptions, LocalStorageOptions } from "../utils/storage";
+import {
+  getStoredOptions,
+  LocalStorageOptions,
+  setStoredOptions,
+} from "../utils/storage";
 
 const App: React.FC<{}> = () => {
   const [options, setOptions] = useState<LocalStorageOptions | null>(null);
@@ -22,6 +26,10 @@ const App: React.FC<{}> = () => {
       ...options,
       homeCity,
     });
+  };
+
+  const handleSaveButtonClick = () => {
+    setStoredOptions(options);
   };
 
   useEffect(() => {
@@ -52,7 +60,11 @@ const App: React.FC<{}> = () => {
               />
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSaveButtonClick}
+              >
                 Save
               </Button>
             </Grid>

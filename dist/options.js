@@ -117,6 +117,9 @@ const App = () => {
     const handleHomeCityChange = (homeCity) => {
         setOptions(Object.assign(Object.assign({}, options), { homeCity }));
     };
+    const handleSaveButtonClick = () => {
+        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.setStoredOptions)(options);
+    };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => setOptions(options));
     }, []);
@@ -134,7 +137,7 @@ const App = () => {
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { variant: "body1" }, "Home city name"),
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: options.homeCity, onChange: (event) => handleHomeCityChange(event.target.value) })),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { variant: "contained", color: "primary" }, "Save")))))));
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { variant: "contained", color: "primary", onClick: handleSaveButtonClick }, "Save")))))));
 };
 const root = document.createElement("div");
 document.body.append(root);
