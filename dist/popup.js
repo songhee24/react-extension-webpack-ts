@@ -557,7 +557,7 @@ function getStoredOptions() {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_react-dom_client_js-node_modules_fontsource-roboto_index_css","vendors-node_modules_mui_icons-material_AddBox_js-node_modules_mui_material_Box_Box_js-node_m-e70c13"], () => (__webpack_require__("./src/popup/popup.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_mui_material_Card_Card_js-node_modules_mui_material_CardContent_CardCont-aa385d","vendors-node_modules_mui_icons-material_AddBox_js-node_modules_mui_material_Box_Box_js-node_m-230eff"], () => (__webpack_require__("./src/popup/popup.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

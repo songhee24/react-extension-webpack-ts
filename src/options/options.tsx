@@ -3,12 +3,15 @@ import { createRoot } from "react-dom/client";
 
 import "fontsource-roboto";
 import "./options.css";
+import { Card, CardContent, Typography } from "@mui/material";
 
 const App: React.FC<{}> = () => {
   return (
-    <div>
-      <img src="icon.png" />
-    </div>
+    <Card>
+      <CardContent>
+        <Typography variant="h4">Weather Extension Options</Typography>
+      </CardContent>
+    </Card>
   );
 };
 
