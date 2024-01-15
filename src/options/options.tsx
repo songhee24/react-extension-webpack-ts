@@ -18,7 +18,7 @@ const App: React.FC<{}> = () => {
     <Box mx="15%" my="2%">
       <Card>
         <CardContent>
-          <Grid container flex={"flex"} flexDirection={"column"}>
+          <Grid container flex={"flex"} flexDirection={"column"} spacing={2}>
             <Grid item>
               <Typography variant="h4">Weather Extension Options</Typography>
             </Grid>
