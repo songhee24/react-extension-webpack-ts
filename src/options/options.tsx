@@ -40,6 +40,7 @@ const App: React.FC<{}> = () => {
                 fullWidth
                 variant={"standard"}
                 placeholder="Enter a home city name"
+                value={options.homeCity}
               />
             </Grid>
             <Grid item>
