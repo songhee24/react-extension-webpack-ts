@@ -5,6 +5,7 @@ import "fontsource-roboto";
 import "./options.css";
 import {
   Box,
+  Button,
   Card,
   CardContent,
   Grid,
@@ -29,6 +30,11 @@ const App: React.FC<{}> = () => {
                 variant={"standard"}
                 placeholder="Enter a home city name"
               />
+            </Grid>
+            <Grid item>
+              <Button variant="contained" color="primary">
+                Save
+              </Button>
             </Grid>
           </Grid>
         </CardContent>
