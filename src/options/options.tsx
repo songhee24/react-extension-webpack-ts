@@ -3,13 +3,21 @@ import { createRoot } from "react-dom/client";
 
 import "fontsource-roboto";
 import "./options.css";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Grid, TextField, Typography } from "@mui/material";
 
 const App: React.FC<{}> = () => {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h4">Weather Extension Options</Typography>
+        <Grid container>
+          <Grid item>
+            <Typography variant="h4">Weather Extension Options</Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="body1">Home city name</Typography>
+            <TextField placeholder="Enter a home city name" />
+          </Grid>
+        </Grid>
       </CardContent>
     </Card>
   );
