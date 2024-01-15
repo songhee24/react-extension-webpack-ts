@@ -30,8 +30,12 @@ const App: React.FC<{}> = () => {
     });
   };
 
-  const handleSaveButtonClick = () => {
-    setStoredOptions(options);
+  const handleSaveButtonClick = async () => {
+    setForm("saving");
+    await setStoredOptions(options);
+    setTimeout(() => {
+      setForm("ready");
+    }, 500);
   };
 
   useEffect(() => {

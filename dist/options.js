@@ -106,6 +106,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/TextField/TextField.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/storage */ "./src/utils/storage.ts");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 
 
 
@@ -119,9 +128,13 @@ const App = () => {
     const handleHomeCityChange = (homeCity) => {
         setOptions(Object.assign(Object.assign({}, options), { homeCity }));
     };
-    const handleSaveButtonClick = () => {
-        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.setStoredOptions)(options);
-    };
+    const handleSaveButtonClick = () => __awaiter(void 0, void 0, void 0, function* () {
+        setForm("saving");
+        yield (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.setStoredOptions)(options);
+        setTimeout(() => {
+            setForm("ready");
+        }, 500);
+    });
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => setOptions(options));
     }, []);
