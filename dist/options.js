@@ -152,7 +152,7 @@ const App = () => {
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { variant: "body1" }, "Home city name"),
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: (_a = options.homeCity) !== null && _a !== void 0 ? _a : "", onChange: (event) => handleHomeCityChange(event.target.value) })),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { variant: "contained", color: "primary", onClick: handleSaveButtonClick }, form === "ready" ? "Save" : "Saving...")))))));
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { disabled: form === "saving", variant: "contained", color: "primary", onClick: handleSaveButtonClick }, form === "ready" ? "Save" : "Saving...")))))));
 };
 const root = document.createElement("div");
 document.body.append(root);

@@ -67,6 +67,7 @@ const App: React.FC<{}> = () => {
             </Grid>
             <Grid item>
               <Button
+                disabled={form === "saving"}
                 variant="contained"
                 color="primary"
                 onClick={handleSaveButtonClick}
