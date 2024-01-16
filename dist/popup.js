@@ -23,11 +23,11 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background-color: #f5f5f5;
-  width: 320px;
+  width: 360px;
   height: 512px;
   font-family: 'Roboto';
 }
-`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,qBAAqB;AACvB","sourcesContent":["body {\n  background-color: #f5f5f5;\n  width: 320px;\n  height: 512px;\n  font-family: 'Roboto';\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,qBAAqB;AACvB","sourcesContent":["body {\n  background-color: #f5f5f5;\n  width: 360px;\n  height: 512px;\n  font-family: 'Roboto';\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -231,6 +231,7 @@ const App = () => {
             setOptions(updateOptions);
         });
     };
+    const handleOverlayButtonClick = () => { };
     if (!options) {
         return null;
     }
@@ -249,7 +250,7 @@ const App = () => {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { item: true },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { sx: { height: "100%" } },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { py: "2px", px: "3px" },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleTempScaleButtonClick },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleOverlayButtonClick },
                             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_PictureInPictureAlt__WEBPACK_IMPORTED_MODULE_12__["default"], null)))))),
         options.homeCity != "" && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: options.homeCity, tempScale: options.tempScale })),
         cities.map((city, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { tempScale: options.tempScale, city: city, key: index, onDelete: () => handleCityDeleteButtonClick(index) }))),

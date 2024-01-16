@@ -55,6 +55,8 @@ const App: React.FC = () => {
     });
   };
 
+  const handleOverlayButtonClick = () => {};
+
   if (!options) {
     return null;
   }
@@ -88,7 +90,7 @@ const App: React.FC = () => {
         <Grid item>
           <Paper sx={{ height: "100%" }}>
             <Box py="2px" px={"3px"}>
-              <IconButton onClick={handleTempScaleButtonClick}>
+              <IconButton onClick={handleOverlayButtonClick}>
                 <PictureInPictureAltIcon />
               </IconButton>
             </Box>
