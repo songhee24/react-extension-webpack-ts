@@ -5,4 +5,5 @@
     max-width: 240px;
     max-height: 240px;
     z-index: 99999;
+    background-color: #f5f5f5 !important;
 }

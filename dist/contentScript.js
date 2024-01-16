@@ -9729,8 +9729,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.overlayCard {
     max-width: 240px;
     max-height: 240px;
     z-index: 99999;
+    background-color: #f5f5f5 !important;
 }
-`, "",{"version":3,"sources":["webpack://./src/contentScript/contentScript.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,QAAQ;IACR,QAAQ;IACR,gBAAgB;IAChB,iBAAiB;IACjB,cAAc;AAClB","sourcesContent":[".overlayCard {\n    position: fixed;\n    left: 5%;\n    top: 15%;\n    max-width: 240px;\n    max-height: 240px;\n    z-index: 99999;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/contentScript/contentScript.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,QAAQ;IACR,QAAQ;IACR,gBAAgB;IAChB,iBAAiB;IACjB,cAAc;IACd,oCAAoC;AACxC","sourcesContent":[".overlayCard {\n    position: fixed;\n    left: 5%;\n    top: 15%;\n    max-width: 240px;\n    max-height: 240px;\n    z-index: 99999;\n    background-color: #f5f5f5 !important;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
