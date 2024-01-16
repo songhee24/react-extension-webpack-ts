@@ -48438,7 +48438,10 @@ const App = () => {
     const [options, setOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [isActive, setIsActive] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => setOptions(options));
+        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => {
+            setOptions(options);
+            setIsActive(options.hasAutoOverlay);
+        });
     }, []);
     if (!options) {
         return null;

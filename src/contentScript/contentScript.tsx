@@ -14,7 +14,10 @@ const App: React.FC<{}> = () => {
   const [isActive, setIsActive] = useState<boolean>(true);
 
   useEffect(() => {
-    getStoredOptions().then((options) => setOptions(options));
+    getStoredOptions().then((options) => {
+      setOptions(options);
+      setIsActive(options.hasAutoOverlay);
+    });
   }, []);
 
   if (!options) {
