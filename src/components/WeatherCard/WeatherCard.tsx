@@ -68,7 +68,7 @@ const WeatherCard: React.FC<{
 
   return (
     <WeatherCardContainer onDelete={onDelete}>
-      <Grid container>
+      <Grid container justifyContent={"space-around"}>
         <Grid item>
           <Typography variant="h5">{weatherData.name}</Typography>
           <Typography variant="body1">

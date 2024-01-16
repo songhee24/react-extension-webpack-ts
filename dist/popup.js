@@ -136,7 +136,7 @@ const WeatherCard = ({ city, onDelete, tempScale }) => {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { variant: "body1" }, cardState === "loading" ? "Loading..." : "Error could not fetch")));
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(WeatherCardContainer, { onDelete: onDelete },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { container: true },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { container: true, justifyContent: "space-around" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { variant: "h5" }, weatherData.name),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { variant: "body1" }, Math.round(weatherData.main.temp)),
