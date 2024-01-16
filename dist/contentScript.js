@@ -48358,6 +48358,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/WeatherCard */ "./src/components/WeatherCard/index.tsx");
 /* harmony import */ var _contentScript_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contentScript.css */ "./src/contentScript/contentScript.css");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Card/Card.js");
+
 
 
 
@@ -48366,7 +48368,9 @@ chrome.runtime.sendMessage("From the content script", (response) => {
     console.log(response);
 });
 const App = () => {
-    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__["default"], { city: "Osh", tempScale: "metric" });
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], { className: "overlayCard" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__["default"], { city: "Osh", tempScale: "metric" }),
+        ";"));
 };
 const root = document.createElement("div");
 document.body.append(root);
