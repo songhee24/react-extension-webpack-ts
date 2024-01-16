@@ -9,6 +9,7 @@ import {
   Card,
   CardContent,
   Grid,
+  Switch,
   TextField,
   Typography,
 } from "@mui/material";
@@ -67,6 +68,12 @@ const App: React.FC<{}> = () => {
                 disabled={isFieldSaving}
                 onChange={(event) => handleHomeCityChange(event.target.value)}
               />
+            </Grid>
+            <Grid item>
+              <Typography variant="body1">
+                Auto toggle overlay on webpage load
+              </Typography>
+              <Switch color="primary" value={options.hasAutoOverlay} />
             </Grid>
             <Grid item>
               <Button
