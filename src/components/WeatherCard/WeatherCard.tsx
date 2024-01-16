@@ -5,6 +5,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  Grid,
   Typography,
 } from "@mui/material";
 
@@ -67,21 +68,23 @@ const WeatherCard: React.FC<{
 
   return (
     <WeatherCardContainer onDelete={onDelete}>
-      <Typography variant="h5">{weatherData.name}</Typography>
-      <Typography variant="body1">
-        {Math.round(weatherData.main.temp)}
-      </Typography>
-      <Typography variant="body1">
-        Feels Like {Math.round(weatherData.main.feels_like)}
-      </Typography>
-      {weatherData.weather.length > 0 && (
-        <>
-          <img src={getWeatherIconSrc(weatherData.weather[0].icon)} />
-          <Typography className="weatherCard-body">
-            {weatherData.weather[0].main}
-          </Typography>
-        </>
-      )}
+      <Grid container>
+        <Typography variant="h5">{weatherData.name}</Typography>
+        <Typography variant="body1">
+          {Math.round(weatherData.main.temp)}
+        </Typography>
+        <Typography variant="body1">
+          Feels Like {Math.round(weatherData.main.feels_like)}
+        </Typography>
+        {weatherData.weather.length > 0 && (
+          <>
+            <img src={getWeatherIconSrc(weatherData.weather[0].icon)} />
+            <Typography className="weatherCard-body">
+              {weatherData.weather[0].main}
+            </Typography>
+          </>
+        )}
+      </Grid>
     </WeatherCardContainer>
   );
 };
