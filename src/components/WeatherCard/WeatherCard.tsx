@@ -75,7 +75,12 @@ const WeatherCard: React.FC<{
         Feels Like {Math.round(weatherData.main.feels_like)}
       </Typography>
       {weatherData.weather.length > 0 && (
-        <img src={getWeatherIconSrc(weatherData.weather[0].icon)} />
+        <>
+          <img src={getWeatherIconSrc(weatherData.weather[0].icon)} />
+          <Typography className="weatherCard-body">
+            {weatherData.weather[0].main}
+          </Typography>
+        </>
       )}
     </WeatherCardContainer>
   );
