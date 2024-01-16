@@ -84,6 +84,7 @@ const App: React.FC<{}> = () => {
                 color="primary"
                 value={options.hasAutoOverlay}
                 onChange={(_, checked) => handleAutoOverlayChange(checked)}
+                disabled={isFieldSaving}
               />
             </Grid>
             <Grid item>

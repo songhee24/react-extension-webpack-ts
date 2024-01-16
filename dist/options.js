@@ -158,7 +158,7 @@ const App = () => {
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { fullWidth: true, variant: "standard", placeholder: "Enter a home city name", value: (_a = options.homeCity) !== null && _a !== void 0 ? _a : "", disabled: isFieldSaving, onChange: (event) => handleHomeCityChange(event.target.value) })),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { variant: "body1" }, "Auto toggle overlay on webpage load"),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { color: "primary", value: options.hasAutoOverlay, onChange: (_, checked) => handleAutoOverlayChange(checked) })),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { color: "primary", value: options.hasAutoOverlay, onChange: (_, checked) => handleAutoOverlayChange(checked), disabled: isFieldSaving })),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
                         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], { disabled: isFieldSaving, variant: "contained", color: "primary", onClick: handleSaveButtonClick }, form === "ready" ? "Save" : "Saving...")))))));
 };
