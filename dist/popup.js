@@ -139,7 +139,8 @@ const WeatherCard = ({ city, onDelete, tempScale }) => {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { variant: "body1" }, Math.round(weatherData.main.temp)),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { variant: "body1" },
             "Feels Like ",
-            Math.round(weatherData.main.feels_like))));
+            Math.round(weatherData.main.feels_like)),
+        weatherData.weather.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.getWeatherIconSrc)(weatherData[0].weather.icon) }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WeatherCard);
 

@@ -10,6 +10,7 @@ import {
 
 import {
   fetchWeatherData,
+  getWeatherIconSrc,
   OpenWeatherData,
   OpenWeatherTempScale,
 } from "../../utils/api";
@@ -73,6 +74,9 @@ const WeatherCard: React.FC<{
       <Typography variant="body1">
         Feels Like {Math.round(weatherData.main.feels_like)}
       </Typography>
+      {weatherData.weather.length > 0 && (
+        <img src={getWeatherIconSrc(weatherData[0].weather.icon)} />
+      )}
     </WeatherCardContainer>
   );
 };
