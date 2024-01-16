@@ -48444,7 +48444,7 @@ const App = () => {
         return null;
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, isActive && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { className: "overlayCard" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__["default"], { city: options.homeCity, tempScale: options.tempScale }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__["default"], { city: options.homeCity, tempScale: options.tempScale, onDelete: () => setIsActive(false) }),
         ";"))));
 };
 const root = document.createElement("div");
