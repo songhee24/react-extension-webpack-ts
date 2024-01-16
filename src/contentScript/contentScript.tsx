@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import WeatherCard from "../components/WeatherCard";
 
+import "./contentScript.css";
 chrome.runtime.sendMessage("From the content script", (response) => {
   console.log(response);
 });
