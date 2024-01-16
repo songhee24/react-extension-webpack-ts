@@ -43,6 +43,13 @@ const App: React.FC<{}> = () => {
     getStoredOptions().then((options) => setOptions(options));
   }, []);
 
+  const handleAutoOverlayChange = (hasAutoOverlay: boolean) => {
+    setOptions({
+      ...options,
+      hasAutoOverlay,
+    });
+  };
+
   if (!options) {
     return null;
   }
@@ -73,7 +80,11 @@ const App: React.FC<{}> = () => {
               <Typography variant="body1">
                 Auto toggle overlay on webpage load
               </Typography>
-              <Switch color="primary" value={options.hasAutoOverlay} />
+              <Switch
+                color="primary"
+                value={options.hasAutoOverlay}
+                onChange={(_, checked) => handleAutoOverlayChange(checked)}
+              />
             </Grid>
             <Grid item>
               <Button
