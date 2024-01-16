@@ -21,7 +21,7 @@ module.exports = {
     background: path.resolve(__dirname, "src/background/background.ts"),
     contentScript: path.resolve(
       __dirname,
-      "src/contentScript/contentScript.ts"
+      "src/contentScript/contentScript.tsx"
     ),
   },
   module: {
@@ -65,7 +65,9 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: "all",
+      chunks(chunk) {
+        return chunk.name !== "contentScript";
+      },
     },
   },
 };
