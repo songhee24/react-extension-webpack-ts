@@ -48436,15 +48436,16 @@ chrome.runtime.sendMessage("From the content script", (response) => {
 });
 const App = () => {
     const [options, setOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [isActive, setIsActive] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_4__.getStoredOptions)().then((options) => setOptions(options));
     }, []);
     if (!options) {
         return null;
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { className: "overlayCard" },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, isActive && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { className: "overlayCard" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__["default"], { city: options.homeCity, tempScale: options.tempScale }),
-        ";"));
+        ";"))));
 };
 const root = document.createElement("div");
 document.body.append(root);

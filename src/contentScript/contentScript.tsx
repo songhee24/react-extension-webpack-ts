@@ -11,6 +11,7 @@ chrome.runtime.sendMessage("From the content script", (response) => {
 
 const App: React.FC<{}> = () => {
   const [options, setOptions] = useState<LocalStorageOptions | null>(null);
+  const [isActive, setIsActive] = useState<boolean>(true);
 
   useEffect(() => {
     getStoredOptions().then((options) => setOptions(options));
@@ -21,9 +22,13 @@ const App: React.FC<{}> = () => {
   }
 
   return (
-    <Card className="overlayCard">
-      <WeatherCard city={options.homeCity} tempScale={options.tempScale} />;
-    </Card>
+    <>
+      {isActive && (
+        <Card className="overlayCard">
+          <WeatherCard city={options.homeCity} tempScale={options.tempScale} />;
+        </Card>
+      )}
+    </>
   );
 };
 
