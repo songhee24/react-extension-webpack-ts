@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import AddBoxIcon from "@mui/icons-material/AddBox";
+import PictureInPictureAltIcon from "@mui/icons-material/PictureInPictureAlt";
+
 import { InputBase, IconButton, Paper, Box, Grid } from "@mui/material";
 
 import "fontsource-roboto";
@@ -79,6 +81,15 @@ const App: React.FC = () => {
             <Box py="2px" px={"3px"}>
               <IconButton onClick={handleTempScaleButtonClick}>
                 {options.tempScale === "metric" ? "\u2103" : "\u2109"}
+              </IconButton>
+            </Box>
+          </Paper>
+        </Grid>
+        <Grid item>
+          <Paper sx={{ height: "100%" }}>
+            <Box py="2px" px={"3px"}>
+              <IconButton onClick={handleTempScaleButtonClick}>
+                <PictureInPictureAltIcon />
               </IconButton>
             </Box>
           </Paper>
