@@ -6,7 +6,7 @@ import { InputBase, IconButton, Paper, Box, Grid } from "@mui/material";
 import "fontsource-roboto";
 
 import "./popup.css";
-import WeatherCard from "./WeatherCard";
+import WeatherCard from "../components/WeatherCard";
 import {
   getStoredCities,
   getStoredOptions,
