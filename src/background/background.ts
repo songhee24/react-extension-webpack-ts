@@ -9,6 +9,7 @@ chrome.runtime.onInstalled.addListener(() => {
   setStoredOptions({
     homeCity: "",
     tempScale: "metric",
+    hasAutoOverlay: false,
   });
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {

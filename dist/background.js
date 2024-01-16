@@ -129,6 +129,7 @@ chrome.runtime.onInstalled.addListener(() => {
     (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredOptions)({
         homeCity: "",
         tempScale: "metric",
+        hasAutoOverlay: false,
     });
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
