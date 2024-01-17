@@ -40,7 +40,7 @@ getStoredOptions().then((options) => {
   }
 
   fetchWeatherData(options.homeCity, options.tempScale).then((data) => {
-    const temp = data.main.temp;
+    const temp = Math.round(data.main.temp);
     const symbol = options.tempScale === "metric" ? "\u2103" : "\u2109";
     chrome.action.setBadgeText({
       text: `${temp}${symbol}`,
