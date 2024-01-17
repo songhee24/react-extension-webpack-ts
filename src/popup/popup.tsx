@@ -57,11 +57,16 @@ const App: React.FC = () => {
   };
 
   const handleOverlayButtonClick = () => {
-    chrome.tabs.query({ active: true }, (tabs) => {
-      if (tabs.length > 0) {
-        chrome.tabs.sendMessage(tabs[0].id, Messages.TOGGLE_OVERLAY);
+    chrome.tabs.query(
+      {
+        active: true,
+      },
+      (tabs) => {
+        if (tabs.length > 0) {
+          chrome.tabs.sendMessage(tabs[0].id, Messages.TOGGLE_OVERLAY);
+        }
       }
-    });
+    );
   };
 
   if (!options) {

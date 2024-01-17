@@ -23,11 +23,12 @@ const App: React.FC<{}> = () => {
 
   useEffect(() => {
     chrome.runtime.onMessage.addListener((message) => {
+      console.log(message);
       if (message === Messages.TOGGLE_OVERLAY) {
         setIsActive(!isActive);
       }
     });
-  }, []);
+  }, [isActive]);
 
   if (!options) {
     return null;

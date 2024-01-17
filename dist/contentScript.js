@@ -48466,11 +48466,12 @@ const App = () => {
     }, []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         chrome.runtime.onMessage.addListener((message) => {
+            console.log(message);
             if (message === _utils_messages__WEBPACK_IMPORTED_MODULE_5__.Messages.TOGGLE_OVERLAY) {
                 setIsActive(!isActive);
             }
         });
-    }, []);
+    }, [isActive]);
     if (!options) {
         return null;
     }

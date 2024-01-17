@@ -234,7 +234,9 @@ const App = () => {
         });
     };
     const handleOverlayButtonClick = () => {
-        chrome.tabs.query({ active: true }, (tabs) => {
+        chrome.tabs.query({
+            active: true,
+        }, (tabs) => {
             if (tabs.length > 0) {
                 chrome.tabs.sendMessage(tabs[0].id, _utils_messages__WEBPACK_IMPORTED_MODULE_6__.Messages.TOGGLE_OVERLAY);
             }
