@@ -173,17 +173,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/icons-material/AddBox */ "./node_modules/@mui/icons-material/AddBox.js");
-/* harmony import */ var _mui_icons_material_PictureInPictureAlt__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/icons-material/PictureInPictureAlt */ "./node_modules/@mui/icons-material/PictureInPictureAlt.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputBase/InputBase.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
+/* harmony import */ var _mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/icons-material/AddBox */ "./node_modules/@mui/icons-material/AddBox.js");
+/* harmony import */ var _mui_icons_material_PictureInPictureAlt__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/PictureInPictureAlt */ "./node_modules/@mui/icons-material/PictureInPictureAlt.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Paper/Paper.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/InputBase/InputBase.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
 /* harmony import */ var fontsource_roboto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! fontsource-roboto */ "./node_modules/fontsource-roboto/index.css");
 /* harmony import */ var _popup_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup.css */ "./src/popup/popup.css");
 /* harmony import */ var _components_WeatherCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/WeatherCard */ "./src/components/WeatherCard/index.tsx");
 /* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/storage */ "./src/utils/storage.ts");
+/* harmony import */ var _utils_messages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/messages */ "./src/utils/messages.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -193,6 +194,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -232,31 +234,35 @@ const App = () => {
         });
     };
     const handleOverlayButtonClick = () => {
-        chrome.tabs.query({ active: true }, (tab) => { });
+        chrome.tabs.query({ active: true }, (tabs) => {
+            if (tabs.length > 0) {
+                chrome.tabs.sendMessage(tabs[0].id, _utils_messages__WEBPACK_IMPORTED_MODULE_6__.Messages.TOGGLE_OVERLAY);
+            }
+        });
     };
     if (!options) {
         return null;
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { sx: { overflow: "hidden", overflowY: "scroll" }, mx: "8px", my: "16px" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { container: true, justifyContent: "space-evenly" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { item: true },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { px: "15px", py: "5px" },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { value: cityInput, onChange: (event) => setCityInput(event.target.value), placeholder: "Add a city name" }),
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleCityButtonClick },
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_11__["default"], null))))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { item: true },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { sx: { height: "100%" } },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { py: "2px", px: "3px" },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleTempScaleButtonClick }, options.tempScale === "metric" ? "\u2103" : "\u2109")))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { item: true },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { sx: { height: "100%" } },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { py: "2px", px: "3px" },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { onClick: handleOverlayButtonClick },
-                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_PictureInPictureAlt__WEBPACK_IMPORTED_MODULE_12__["default"], null)))))),
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { sx: { overflow: "hidden", overflowY: "scroll" }, mx: "8px", my: "16px" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { container: true, justifyContent: "space-evenly" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { px: "15px", py: "5px" },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], { value: cityInput, onChange: (event) => setCityInput(event.target.value), placeholder: "Add a city name" }),
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { onClick: handleCityButtonClick },
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_AddBox__WEBPACK_IMPORTED_MODULE_12__["default"], null))))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { sx: { height: "100%" } },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { py: "2px", px: "3px" },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { onClick: handleTempScaleButtonClick }, options.tempScale === "metric" ? "\u2103" : "\u2109")))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], { item: true },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], { sx: { height: "100%" } },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { py: "2px", px: "3px" },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], { onClick: handleOverlayButtonClick },
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_icons_material_PictureInPictureAlt__WEBPACK_IMPORTED_MODULE_13__["default"], null)))))),
         options.homeCity != "" && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { city: options.homeCity, tempScale: options.tempScale })),
         cities.map((city, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_4__["default"], { tempScale: options.tempScale, city: city, key: index, onDelete: () => handleCityDeleteButtonClick(index) }))),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { height: "16px" })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], { height: "16px" })));
 };
 const root = document.createElement("div");
 document.body.append(root);
@@ -296,6 +302,24 @@ function fetchWeatherData(city, tempScale) {
         return data;
     });
 }
+
+
+/***/ }),
+
+/***/ "./src/utils/messages.ts":
+/*!*******************************!*\
+  !*** ./src/utils/messages.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Messages: () => (/* binding */ Messages)
+/* harmony export */ });
+var Messages;
+(function (Messages) {
+    Messages[Messages["TOGGLE_OVERLAY"] = 0] = "TOGGLE_OVERLAY";
+})(Messages || (Messages = {}));
 
 
 /***/ }),

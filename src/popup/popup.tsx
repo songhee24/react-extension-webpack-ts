@@ -16,6 +16,7 @@ import {
   setStoredCities,
   setStoredOptions,
 } from "../utils/storage";
+import { Messages } from "../utils/messages";
 
 const App: React.FC = () => {
   const [cities, setCities] = useState<string[]>([]);
@@ -56,7 +57,11 @@ const App: React.FC = () => {
   };
 
   const handleOverlayButtonClick = () => {
-    chrome.tabs.query({ active: true }, (tab) => {});
+    chrome.tabs.query({ active: true }, (tabs) => {
+      if (tabs.length > 0) {
+        chrome.tabs.sendMessage(tabs[0].id, Messages.TOGGLE_OVERLAY);
+      }
+    });
   };
 
   if (!options) {
