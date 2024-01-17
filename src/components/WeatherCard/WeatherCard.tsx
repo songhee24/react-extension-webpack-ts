@@ -70,11 +70,13 @@ const WeatherCard: React.FC<{
     <WeatherCardContainer onDelete={onDelete}>
       <Grid container justifyContent={"space-around"}>
         <Grid item>
-          <Typography variant="h5">{weatherData.name}</Typography>
-          <Typography variant="body1">
+          <Typography className="weatherCard-title">
+            {weatherData.name}
+          </Typography>
+          <Typography className="weatherCard-temp">
             {Math.round(weatherData.main.temp)}
           </Typography>
-          <Typography variant="body1">
+          <Typography className="weatherCard-body">
             Feels Like {Math.round(weatherData.main.feels_like)}
           </Typography>
         </Grid>
