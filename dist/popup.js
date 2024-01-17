@@ -282,7 +282,8 @@ container.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App,
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   fetchWeatherData: () => (/* binding */ fetchWeatherData)
+/* harmony export */   fetchWeatherData: () => (/* binding */ fetchWeatherData),
+/* harmony export */   getWeatherIconSrc: () => (/* binding */ getWeatherIconSrc)
 /* harmony export */ });
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -303,6 +304,9 @@ function fetchWeatherData(city, tempScale) {
         const data = yield res.json();
         return data;
     });
+}
+function getWeatherIconSrc(iconCode) {
+    return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 }
 
 
