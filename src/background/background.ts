@@ -23,6 +23,10 @@ chrome.runtime.onInstalled.addListener(() => {
     title: "Add city to weather extension",
     id: "weatherExtension",
   });
+
+  chrome.alarms.create({
+    periodInMinutes: 1 / 6,
+  });
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   sendResponse("from the background script");
