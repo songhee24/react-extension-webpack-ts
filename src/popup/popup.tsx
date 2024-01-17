@@ -55,7 +55,9 @@ const App: React.FC = () => {
     });
   };
 
-  const handleOverlayButtonClick = () => {};
+  const handleOverlayButtonClick = () => {
+    chrome.tabs.query({ active: true }, (tab) => {});
+  };
 
   if (!options) {
     return null;

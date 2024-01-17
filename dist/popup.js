@@ -231,7 +231,9 @@ const App = () => {
             setOptions(updateOptions);
         });
     };
-    const handleOverlayButtonClick = () => { };
+    const handleOverlayButtonClick = () => {
+        chrome.tabs.query({ active: true }, (tab) => { });
+    };
     if (!options) {
         return null;
     }
