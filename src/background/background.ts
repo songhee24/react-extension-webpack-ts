@@ -28,6 +28,23 @@ chrome.runtime.onInstalled.addListener(() => {
     periodInMinutes: 1 / 6,
   });
 });
+
+chrome.alarms.onAlarm.addListener(() => {
+  getStoredOptions().then((options) => {
+    if (options.homeCity === "") {
+      return;
+    }
+
+    fetchWeatherData(options.homeCity, options.tempScale).then((data) => {
+      const temp = Math.round(data.main.temp);
+      const symbol = options.tempScale === "metric" ? "\u2103" : "\u2109";
+      chrome.action.setBadgeText({
+        text: `${temp}${symbol}`,
+      });
+    });
+  });
+});
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   sendResponse("from the background script");
 });
@@ -35,19 +52,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 chrome.contextMenus.onClicked.addListener((event) => {
   getStoredCities().then((cities) => {
     setStoredCities([...cities, event.selectionText]);
-  });
-});
-
-getStoredOptions().then((options) => {
-  if (options.homeCity === "") {
-    return;
-  }
-
-  fetchWeatherData(options.homeCity, options.tempScale).then((data) => {
-    const temp = Math.round(data.main.temp);
-    const symbol = options.tempScale === "metric" ? "\u2103" : "\u2109";
-    chrome.action.setBadgeText({
-      text: `${temp}${symbol}`,
-    });
   });
 });

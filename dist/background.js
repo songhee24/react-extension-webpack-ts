@@ -176,24 +176,26 @@ chrome.runtime.onInstalled.addListener(() => {
         periodInMinutes: 1 / 6,
     });
 });
+chrome.alarms.onAlarm.addListener(() => {
+    (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.getStoredOptions)().then((options) => {
+        if (options.homeCity === "") {
+            return;
+        }
+        (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(options.homeCity, options.tempScale).then((data) => {
+            const temp = Math.round(data.main.temp);
+            const symbol = options.tempScale === "metric" ? "\u2103" : "\u2109";
+            chrome.action.setBadgeText({
+                text: `${temp}${symbol}`,
+            });
+        });
+    });
+});
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse("from the background script");
 });
 chrome.contextMenus.onClicked.addListener((event) => {
     (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.getStoredCities)().then((cities) => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredCities)([...cities, event.selectionText]);
-    });
-});
-(0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.getStoredOptions)().then((options) => {
-    if (options.homeCity === "") {
-        return;
-    }
-    (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(options.homeCity, options.tempScale).then((data) => {
-        const temp = Math.round(data.main.temp);
-        const symbol = options.tempScale === "metric" ? "\u2103" : "\u2109";
-        chrome.action.setBadgeText({
-            text: `${temp}${symbol}`,
-        });
     });
 });
 
