@@ -47082,6 +47082,25 @@ function fetchWeatherData(city, tempScale) {
 
 /***/ }),
 
+/***/ "./src/utils/messages.ts":
+/*!*******************************!*\
+  !*** ./src/utils/messages.ts ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Messages: () => (/* binding */ Messages)
+/* harmony export */ });
+var Messages;
+(function (Messages) {
+    Messages[Messages["TOGGLE_OVERLAY"] = 0] = "TOGGLE_OVERLAY";
+})(Messages || (Messages = {}));
+
+
+/***/ }),
+
 /***/ "./src/utils/storage.ts":
 /*!******************************!*\
   !*** ./src/utils/storage.ts ***!
@@ -48423,8 +48442,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/WeatherCard */ "./src/components/WeatherCard/index.tsx");
 /* harmony import */ var _contentScript_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./contentScript.css */ "./src/contentScript/contentScript.css");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Card/Card.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Card/Card.js");
 /* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/storage */ "./src/utils/storage.ts");
+/* harmony import */ var _utils_messages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/messages */ "./src/utils/messages.ts");
+
 
 
 
@@ -48443,10 +48464,17 @@ const App = () => {
             setIsActive(options.hasAutoOverlay);
         });
     }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        chrome.runtime.onMessage.addListener((message) => {
+            if (message === _utils_messages__WEBPACK_IMPORTED_MODULE_5__.Messages.TOGGLE_OVERLAY) {
+                setIsActive(!isActive);
+            }
+        });
+    }, []);
     if (!options) {
         return null;
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, isActive && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { className: "overlayCard" },
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, isActive && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], { className: "overlayCard" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_WeatherCard__WEBPACK_IMPORTED_MODULE_2__["default"], { city: options.homeCity, tempScale: options.tempScale, onDelete: () => setIsActive(false) }),
         ";"))));
 };

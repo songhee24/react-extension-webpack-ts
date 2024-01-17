@@ -5,6 +5,7 @@ import WeatherCard from "../components/WeatherCard";
 import "./contentScript.css";
 import { Card } from "@mui/material";
 import { getStoredOptions, LocalStorageOptions } from "../utils/storage";
+import { Messages } from "../utils/messages";
 chrome.runtime.sendMessage("From the content script", (response) => {
   console.log(response);
 });
@@ -17,6 +18,14 @@ const App: React.FC<{}> = () => {
     getStoredOptions().then((options) => {
       setOptions(options);
       setIsActive(options.hasAutoOverlay);
+    });
+  }, []);
+
+  useEffect(() => {
+    chrome.runtime.onMessage.addListener((message) => {
+      if (message === Messages.TOGGLE_OVERLAY) {
+        setIsActive(!isActive);
+      }
     });
   }, []);
 
