@@ -140,6 +140,11 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse("from the background script");
 });
+chrome.contextMenus.onClicked.addListener((event) => {
+    (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.getStoredCities)().then((cities) => {
+        (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredCities)([...cities, event.selectionText]);
+    });
+});
 
 })();
 

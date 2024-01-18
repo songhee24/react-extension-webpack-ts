@@ -1,4 +1,8 @@
-import { setStoredCities, setStoredOptions } from "../utils/storage";
+import {
+  getStoredCities,
+  setStoredCities,
+  setStoredOptions,
+} from "../utils/storage";
 
 console.log("background hello world");
 
@@ -20,4 +24,10 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   sendResponse("from the background script");
+});
+
+chrome.contextMenus.onClicked.addListener((event) => {
+  getStoredCities().then((cities) => {
+    setStoredCities([...cities, event.selectionText]);
+  });
 });
