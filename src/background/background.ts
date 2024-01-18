@@ -11,6 +11,12 @@ chrome.runtime.onInstalled.addListener(() => {
     tempScale: "metric",
     hasAutoOverlay: false,
   });
+
+  chrome.contextMenus.create({
+    contexts: ["selection"],
+    title: "Add city to weather extension",
+    id: "weatherExtension",
+  });
 });
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   sendResponse("from the background script");
