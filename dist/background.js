@@ -145,6 +145,9 @@ chrome.contextMenus.onClicked.addListener((event) => {
         (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.setStoredCities)([...cities, event.selectionText]);
     });
 });
+chrome.action.setBadgeText({
+    text: "1000",
+});
 
 })();
 

@@ -31,3 +31,7 @@ chrome.contextMenus.onClicked.addListener((event) => {
     setStoredCities([...cities, event.selectionText]);
   });
 });
+
+chrome.action.setBadgeText({
+  text: "1000",
+});
