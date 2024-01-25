@@ -1,8 +1,10 @@
 import {
   getStoredCities,
+  getStoredOptions,
   setStoredCities,
   setStoredOptions,
 } from "../utils/storage";
+import { fetchWeatherData } from "../utils/api";
 
 console.log("background hello world");
 
@@ -32,6 +34,10 @@ chrome.contextMenus.onClicked.addListener((event) => {
   });
 });
 
-chrome.action.setBadgeText({
-  text: "1000",
+getStoredOptions().then((options) => {
+  fetchWeatherData(options.homeCity, options.tempScale).then((data) => {
+    chrome.action.setBadgeText({
+      text: "1000",
+    });
+  });
 });
