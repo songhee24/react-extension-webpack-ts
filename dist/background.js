@@ -182,6 +182,9 @@ chrome.contextMenus.onClicked.addListener((event) => {
     });
 });
 (0,_utils_storage__WEBPACK_IMPORTED_MODULE_0__.getStoredOptions)().then((options) => {
+    if (options.homeCity === "") {
+        return;
+    }
     (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(options.homeCity, options.tempScale).then((data) => {
         chrome.action.setBadgeText({
             text: "1000",

@@ -35,6 +35,10 @@ chrome.contextMenus.onClicked.addListener((event) => {
 });
 
 getStoredOptions().then((options) => {
+  if (options.homeCity === "") {
+    return;
+  }
+
   fetchWeatherData(options.homeCity, options.tempScale).then((data) => {
     chrome.action.setBadgeText({
       text: "1000",
