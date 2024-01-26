@@ -186,8 +186,10 @@ chrome.contextMenus.onClicked.addListener((event) => {
         return;
     }
     (0,_utils_api__WEBPACK_IMPORTED_MODULE_1__.fetchWeatherData)(options.homeCity, options.tempScale).then((data) => {
+        const temp = data.main.temp;
+        const symbol = options.tempScale === "metric" ? "\u2103" : "\u2109";
         chrome.action.setBadgeText({
-            text: "1000",
+            text: `${temp}${symbol}`,
         });
     });
 });
